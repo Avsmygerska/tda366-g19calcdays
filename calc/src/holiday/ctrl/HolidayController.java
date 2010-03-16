@@ -30,7 +30,7 @@ public class HolidayController extends AbstractAction{
 		Calendar nextHoliday = DateCalculator.getInstance().nextHoliday(jcal.getCalendar());
 //		DateFormat formatter = DateFormat.getDateInstance(DateFormat.FULL, Locale.ENGLISH);
 		DateFormat formatter = DateFormat.getDateInstance(DateFormat.FULL);
-//		JOptionPane.showMessageDialog(null, "Next Swedish holiday: " + formatter.format(nextHoliday.getTime()));
-		JOptionPane.showMessageDialog(null, "Nästa helgdag: " + formatter.format(nextHoliday.getTime()));
+		JOptionPane.showMessageDialog(null, "Next Swedish holiday: " + formatter.format(nextHoliday.getTime()));
+//		JOptionPane.showMessageDialog(null, "Nästa helgdag: " + formatter.format(nextHoliday.getTime()));
 	}
 }
