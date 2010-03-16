@@ -12,9 +12,9 @@ public class Main {
 		// (in the event thread)
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-//				MainFrame frame = new MainFrame();
-//				frame.setLocationRelativeTo(null);
-//				frame.setVisible(true);
+				MainFrame frame = new MainFrame();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
 			}
 		});
 	}
