@@ -6,9 +6,12 @@ import holiday.subsys.DateCalculator;
 import java.awt.event.ActionEvent;
 import java.text.DateFormat;
 import java.util.Calendar;
+//import java.util.Locale;
 
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
+
+import com.toedter.calendar.JCalendar;
 
 
 @SuppressWarnings("serial")
@@ -23,8 +26,11 @@ public class HolidayController extends AbstractAction{
 	}
 
 	private void nextHoliday() {
-		Calendar nextHoliday = DateCalculator.getInstance().nextHoliday(Calendar.getInstance());
+		JCalendar jcal = (JCalendar)getValue(MainFrame.ComponentNames.JPCalendar.toString());
+		Calendar nextHoliday = DateCalculator.getInstance().nextHoliday(jcal.getCalendar());
+//		DateFormat formatter = DateFormat.getDateInstance(DateFormat.FULL, Locale.ENGLISH);
 		DateFormat formatter = DateFormat.getDateInstance(DateFormat.FULL);
+//		JOptionPane.showMessageDialog(null, "Next Swedish holiday: " + formatter.format(nextHoliday.getTime()));
 		JOptionPane.showMessageDialog(null, "Nästa helgdag: " + formatter.format(nextHoliday.getTime()));
 	}
 }
