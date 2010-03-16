@@ -10,6 +10,7 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import com.toedter.calendar.JCalendar;
 
 
 @SuppressWarnings("serial")
@@ -19,6 +20,7 @@ public class MainFrame extends JFrame {
 	};
 
 	private JButton jbNextHoliday;
+	private JCalendar jpCalendar;
 
 	public MainFrame() {
 		initGUI();
@@ -32,7 +34,9 @@ public class MainFrame extends JFrame {
 	private void initGUI() {
 		// BorderLayout by default
 		Container pane = getContentPane();
+		jpCalendar = new JCalendar();
 		jbNextHoliday = new JButton();
+		pane.add(jpCalendar, BorderLayout.CENTER);
 		pane.add(jbNextHoliday, BorderLayout.PAGE_END);
 	}
 
@@ -40,6 +44,7 @@ public class MainFrame extends JFrame {
 		Action ctrl = ControllerFactory.getControl(Ctrl.HOLIDAY_CTRL);
 		jbNextHoliday.setAction(ctrl);
 		ctrl.putValue(ComponentNames.JBNextHoliday.toString(), jbNextHoliday);
+		ctrl.putValue(ComponentNames.JPCalendar.toString(), jpCalendar);
 	}
 
 	private void setNames() {
