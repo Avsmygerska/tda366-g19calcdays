@@ -1,0 +1,1 @@
+Toy application that calculates the number of days to next vacation.
